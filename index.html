@@ -61,7 +61,9 @@
       var input = document.getElementById("passwordInput").value;
       if (input === "もりひろあき") {
         document.getElementById("content").style.display = "block";
-      } else {
+      } else if(input === "なかおみゆ"){
+        alert("ちがいます！が、ここで特別にヒント！おかあさまのチケットを買うために夜まで起きている素敵な息子さん。");
+      }else {
         alert("ちがいます！");
       }
     }
