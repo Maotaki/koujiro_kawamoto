@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="6V76E-9DPZCR1s6JTRX9dYpW_Dv50SX_Ya3N6lWpcwI" />
-  <meta name="description" content="アイドル, TONIO, 川本幸次郎, ジャイーズ, プロフィール">
-  <meta name="keywords" content="川本幸次郎, プロフィール, TONIO,ジャイーズ">
+  <meta name="description" content="アイドル, TONIO, コウジ川本, ジャイーズ, プロフィール">
+  <meta name="keywords" content="コウジ川本, プロフィール, TONIO,ジャイーズ">
   <meta name="author" content="Maotaki">
-  <title>川本幸次郎のブログ</title>
+  <title>コウジ川本のアイドル人生</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     #content {
-      display: none; /* 最初は非表示 */
+      display: none;
+      /* 最初は非表示 */
     }
   </style>
 </head>
@@ -17,15 +20,24 @@
 <body>
 
   <header>
-    <h1>川本幸次郎のトキメキ☆レボリューション</h1>
+    <h1>コウジ川本のトキメキ☆レボリューション</h1>
     <nav>
       <ul>
         <!-- ここどうしようかなあ -->
+        <!--
         <li><a href="#">ホーム</a></li>
         <li><a href="#">プロフィール</a></li>
         <li><a href="#">お問い合わせ</a></li>
+        -->
       </ul>
     </nav>
+    <div class="hero">
+      <img src="images/koji.jpg" alt="コウジ川本" class="hero-image">
+      <div class="hero-text">
+        <h1>コウジ川本のトキメキ☆レボリューション</h1>
+      </div>
+</div>
+
   </header>
 
   <main>
@@ -35,43 +47,55 @@
 
     <div id="content">
       <article>
-        <h2>初めての投稿</h2>
-        <p><time datetime="2025-07-19">2025年7月19日</time></p>
+        <h2>プロフィール</h2>
+        <p><time datetime="2025-07-19">掲載日：2019年1月20日</time></p>
         <p>
-          こんにちは、川本幸次郎です。ブログを始めました！ここでは日々の気づきや学んだこと、
-          興味のあることなどを自由に綴っていきます。どうぞよろしくお願いします。
+          コウジ川本
+          <ul>
+            <li>本名: 川本幸次郎 (かわもと こうじろう)</li>
+            <li>生年月日: 1972年6月19日</li>
+            <li>出身地: 島根県益田市</li>
+            <li>血液型: A型</li>
+            <li>身長: 178cm</li>
+            <li>体重: 65kg</li>
+            <li>趣味: 映画鑑賞、料理、旅行</li>
+            <li>特技: ダンス、歌唱、トロンボーン演奏</li>
+            <li>所属事務所: ジャイーズ事務所</li>
+            <li>デビュー: 1990年</li>
+            <li>代表作: TONIO (1995年)、星の王子さま (1998年)</li>
         </p>
       </article>
 
       <article>
         <h2>アイドルになったきっかけは？</h2>
-        <p><time datetime="2025-07-17">2025年7月17日</time></p>
+        <p><time datetime="2025-07-17">掲載日：2020年5月15日</time></p>
         <p>
-         「あれは1990年8月31日、僕が高校3年生の時のこと。部活の帰り道で、大学生くらいの知らない男に急に声をかけられた。だいぶ長いこと引き止められた上に、なぜか沢山サインを書かされた記憶がある。そのせいで門限に間に合わないと思った僕は、近道をしていつもは通らない商店街を通って帰った。
-          これがまさに、運命の分かれ目だったのだ。商店街でなんと僕はスカウトマンに声をかけられ、ジャニーズに入らないかと誘われた。
-          「もしアイドルに興味があれば、この申込書を事務所に提出して欲しい」と申込書を渡された僕は、早速次の日に提出して、見事審査を通り、ジャニーズに入所したのだ。
-          僕をスカウトマンに引き合わせてくれたあの大学生には感謝している。今でも彼の正体は謎のままだ。」
+           あれは1990年8月30日、僕が高校3年生の時のこと。部活の帰り道で、大学生くらいの知らない男に急に声をかけられた。だいぶ長いこと引き止められた上に、なぜか沢山サインを書かされた記憶がある。そのせいで門限に間に合わないと思った僕は、近道をしていつもは通らない商店街を通って帰った。
+          これがまさに、運命の分かれ目だったのだ。商店街でなんと僕はスカウトマンに声をかけられ、ジャイーズの一員にならないかと誘われた。
+          「もしアイドルに興味があれば、この申込書を事務所に提出してほしい」と申込書を渡された僕は、早速次の日に提出して、見事審査を通り、ジャイーズ事務所に入所したのだ。
+          僕をスカウトマンに引き合わせてくれたあの大学生には感謝している。今でも彼の正体は謎のままだ。
         </p>
       </article>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 川本幸次郎</p>
+    <p>&copy; 2025 コウジ川本</p>
   </footer>
 
   <script>
     function checkPassword() {
       var input = document.getElementById("passwordInput").value;
-      if (input === "もりひろあき") {
+      if (input === "とろんぼーん") {
         document.getElementById("content").style.display = "block";
-      } else if(input === "なかおみゆ"){
-        alert("ちがいます！が、ここで特別にヒント！おかあさまのチケットを買うために夜まで起きている素敵な息子さん。");
-      }else {
+      } else if (input === "こんだくたー") {
+        alert("ちがいます！が、ここで特別にヒント！おかあさまのチケットを買うために夜まで起きている素敵な息子さんが中学校のとき吹いていた楽器");
+      } else {
         alert("ちがいます！");
       }
     }
   </script>
 
 </body>
+
 </html>
