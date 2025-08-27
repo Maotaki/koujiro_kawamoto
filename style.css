@@ -29,6 +29,11 @@ p {
   font-size: 16px;
   margin-bottom: 10px;
 }
+ul {
+  color: #ffffff;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
 
 .whole{
   margin:0 auto 0 auto;
