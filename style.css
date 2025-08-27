@@ -4,42 +4,41 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
+h1 {
+  color: #ffffff;
+  font-size: 32px;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #ffffff;
+}
 h2 {
-  color: #000000;
+  color: #ffffff;
   font-size: 24px;
   margin-bottom: 10px;
-  border-bottom: 3px dashed #000000;
+  border-bottom: 3px dashed #ffffff;
 }
 h3 {
-  color: #000000;
+  color: #ffffff;
   font-size: 20px;
   margin-top: 20px;
 }
-
-
-
-.hero {
-  position: relative;
-  text-align: center;
-  color: white;
+p {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
-.hero-image {
-  width: 100%;
+.whole{
+  margin:0 auto 0 auto;
+  max-width: 960px;
+}
+
+img{
+  max-width: 100%;
   height: auto;
 }
 
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.5); /* 文字が見やすいように */
-  padding: 20px;
-  border-radius: 10px;
-}
 
 
