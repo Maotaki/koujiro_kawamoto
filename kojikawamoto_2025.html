@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="6V76E-9DPZCR1s6JTRX9dYpW_Dv50SX_Ya3N6lWpcwI" />
+    <meta name="keywords" content="コウジ川本, プロフィール, TONIO,ジャイーズ, コウジ川本のアイドル人生, こうじかわもと, ワグネル, 合宿, 夏合宿, 企画厚生, 2025夏合宿">
+    <meta name="author" content="Maotaki">
+
+    <meta name="description" content="ワグネルソサイエティーオーケストラ2025夏合宿の謎解き企画の一環として作成したサイトを再利用して、企画厚生オフィシャルサイトを開設しました。">
+    <link rel="stylesheet" href="style.css">
+    <title>企画厚生オフィシャルサイト</title>
+    <style>
+        #content {
+            display: none;
+            /* 最初は非表示 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="whole">
+
+        <header>
+            <h1>コウジ川本のアイドル人生</h1>
+            <h3>〜2025夏合宿謎解き用サイト～</h3>
+            <!--           
+            <div class="logo-photo">
+                <h4 class="logo">
+                    <img src="images/logo.moji.png" width="960" height="530" alt="コウジ川本文字ロゴ">
+                </h4>
+            </div>
+            -->
+            <nav class="menu">
+                <ul>
+                    <!-- 非序列リスト -->
+                    <li><a href="index.html">企画厚生トップページ</a></li>
+                </ul>
+        </header>
+
+        <main>
+            <h2>合言葉を入力してください　※ひらがな</h2>
+            <input type="text" id="passwordInput" placeholder="ここに入力">
+            <button onclick="checkPassword()">送信</button>
+
+            <div id="content">
+                <nav>
+                    <ul>
+                        <!-- 非序列リスト -->
+                        <!-- <li><a href="index.html">企画厚生トップページ</a></li> -->
+                        <li><a href="blog.html">ブログはこちら</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 企画厚生</p>
+        </footer>
+
+        <script>
+            function checkPassword() {
+                var input = document.getElementById("passwordInput").value;
+                if (input === "とろんぼーん") {
+                    alert("正解。僕のブログへようこそ。下に表示されたリンクからブログをお楽しみください。");
+                    document.getElementById("content").style.display = "block";
+                } else if (input === "トロンボーン") {
+                    alert("正解。僕のブログへようこそ。下に表示されたリンクからブログをお楽しみください。");
+                    document.getElementById("content").style.display = "block";
+                } else if (input === "こんだくたー") {
+                    alert("あと一歩。頑張って。");
+                } else if (input === "コンダクター") {
+                    alert("あと一歩。頑張って。");
+                } else if (input === "かわもとこうじ") {
+                    alert("呼んだ？");
+                } else if (input === "こうじかわもと") {
+                    alert("呼んだ？");
+                } else if (input === "こうじ") {
+                    alert("呼んだ？");
+                } else if (input === "もりひろあき") {
+                    alert("いやいやちょっと君！僕のこと好きすぎるでしょーー👋");
+                } else {
+                    alert("さては、僕のファンじゃないね？");
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
