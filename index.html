@@ -2,67 +2,102 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <meta name="google-site-verification" content="6V76E-9DPZCR1s6JTRX9dYpW_Dv50SX_Ya3N6lWpcwI" />
+    <meta name="keywords" content="コウジ川本, プロフィール, TONIO,ジャイーズ, コウジ川本のアイドル人生, こうじかわもと, ワグネル, 合宿, 夏合宿, 企画厚生, 2025夏合宿,たきもとじん, 滝本迅, こうじかわもと, 2026夏合宿謎解き">
+    <meta name="author" content="Maotaki">
+
+    <meta name="description" content="ワグネルソサイエティーオーケストラの滝本迅だ">
     <title>【WARNING】SYSTEM HACKED</title>
+
     <style>
-        /* 黒の組織風のダークテーマ */
+        /* 黒背景・明るい緑文字の見やすい配色 */
         body {
-            background-color: #0b0c10;
-            color: #66fcf1;
-            font-family: 'Courier New', monospace;
+            background-color: #0d0d0d;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
             text-align: center;
-            padding: 40px;
+            padding: 50px 20px;
         }
-        .hacked-box {
-            border: 2px solid #45a29e;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #1f2833;
-        }
-        .warning-text {
-            color: #ff3333;
-            font-size: 1.5em;
+        .warning {
+            color: #ff0033;
+            font-size: 2em;
             font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .box {
+            border: 2px solid #00ff00;
+            padding: 30px;
+            margin: 0 auto;
+            max-width: 600px;
+            background-color: #111111;
+        }
+        .mystery-area {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px dashed #00ff00;
+        }
+        input[type="text"] {
+            padding: 8px 12px;
+            font-size: 1em;
+            background-color: #000;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            outline: none;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 1em;
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #33ff33;
         }
         #clear-link {
             display: none; /* 最初は隠しておく */
-            margin-top: 20px;
+            margin-top: 25px;
             padding: 15px;
-            border: 1px dashed #66fcf1;
+            border: 2px solid #ffcc00;
+            background-color: #1a1a00;
         }
         #clear-link a {
-            color: #ffbd69;
+            color: #ffcc00;
             font-size: 1.2em;
+            font-weight: bold;
             text-decoration: underline;
         }
     </style>
 </head>
+
+
+
 <body>
 
-    <div class="hacked-box">
-        <p class="warning-text">⚠️ WARNING: SYSTEM HACKED ⚠️</p>
-        <h2>我々は黒の組織だ……</h2>
-        <p>このウェブサイトは我々が占拠した！</p>
-        <p>元に戻したくば、以下の謎を解き、合言葉を入力せよ。</p>
-        
-        <hr style="border-color:#45a29e; margin:20px 0;">
+    <div class="warning">⚠️【緊急事態】サイトが占拠されました ⚠️</div>
+    
+    <div class="box">
+        <h2>ふっふっふ…！</h2>
+        <p>このウェブサイトは我々が乗っ取った！</p>
+        <p>元に戻したくば、ここに謎の答えを入力するのだ……。</p>
 
-        <!-- 謎の提示部分 -->
+        <!-- 謎の提示エリア -->
         <div class="mystery-area">
-            <p>【謎】〇〇〇〇に入る言葉は何か？</p>
+            <p>【謎】〇〇に入る合言葉を入力せよ</p>
         </div>
 
-        <!-- 解答入力フォーム（去年の構成を活用） -->
+        <!-- 入力フォーム -->
         <div style="margin-top: 20px;">
-            <input type="text" id="answerInput" placeholder="合言葉を入力">
+            <input type="text" id="answerInput" placeholder="俺たちが助けたい人の名前は？">
             <button onclick="checkAnswer()">送信</button>
         </div>
 
-        <!-- 正解した時だけ表示されるエリア -->
+        <!-- 正解時に表示されるエリア -->
         <div id="clear-link">
-            <p>くっ…見事謎が解かれたようだ。サイトの解放を許可する。 </p>
-            <a href="sub.html">＞＞ 本来のサイトへ移動する ＜＜</a>
+            <p>くっ…見事謎が解かれたようだ。サイトの解放を許可する。</p>
+            <a href="kojikawamoto_2025.html">＞＞ 本来のサイト（メインページ）へ進む ＜＜</a>
         </div>
     </div>
 
@@ -70,21 +105,16 @@
         function checkAnswer() {
             var input = document.getElementById("answerInput").value;
 
-            // 正解の判定
-            if (input === "くろのそしき" || input === "クロノソシキ") {
+            // 正解の判定（リンク先は移行先のファイル名に指定してください）
+            if (input === "川本貢司" || input === "かわもとこうじ" || input === "コウジ川本" || input === "こうじかわもと"|| input === "こうじ" || input === "かわもとせんせい" || input === "川本先生") {
                 alert("正解だ……！ロックを解除した。");
-                // 正解時に隠していたリンクを表示
                 document.getElementById("clear-link").style.display = "block";
-                
-                /* もし自動でページ移動させたい場合は以下を使います
-                window.location.href = "sub.html"; 
-                */
 
-            // 惜しい入力や特定の単語へのリアクション（ヒント）
+            // ヒントの分岐（自由に追加・変更できます）
             } else if (input === "はっかー") {
                 alert("フッ…ハッカーではない。黒の組織とお呼び。");
             } else if (input === "こうじ") {
-                alert("コウジ川本に助けを求めても無駄だ……");
+                alert("川本に助けを求めても無駄だ……！");
             } else if (input === "") {
                 alert("合言葉を入力するのだ。");
 
@@ -94,5 +124,6 @@
             }
         }
     </script>
+
 </body>
 </html>
