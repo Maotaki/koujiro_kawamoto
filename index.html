@@ -31,6 +31,23 @@
             max-width: 600px;
             background-color: #111111;
         }
+        /* クリアした過去問ログのスタイル */
+        .history-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #336633;
+            background-color: #051505;
+            text-align: left;
+            font-size: 0.95em;
+        }
+        .history-title {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        .history-ans {
+            color: #ffffff;
+            margin-top: 5px;
+        }
         .mystery-area {
             margin: 20px 0;
             padding: 15px;
@@ -87,7 +104,10 @@
         <p>俺の名前は黒澤陣。俺が何者かって…？まあその話はいずれ。お前らはどうやら誰かさんを助けようとしているようだが、その知性がお前らにあるか確かめさせてもらう。</p>
         <p>俺の、用意した問題をすべて解き明かすのだ……。</p>
 
-        <!-- 謎の表示エリア -->
+        <!-- クリアした問題のログがここにたまります -->
+        <div id="history-log"></div>
+
+        <!-- 現在挑戦中の謎表示エリア -->
         <div class="mystery-area" id="mystery-area">
             <div id="mystery-title" class="progress-title">【第1問】</div>
             <p id="mystery-text">ズバリ、ワグネル金打セクションのトレーナーのお名前は？</p>
@@ -171,6 +191,16 @@
             // 正解判定
             if (correctAnswers[currentStep].includes(input)) {
                 alert(currentData.successMsg);
+
+                // 過去ログ表示用エリアにクリアした問題と入力を追加
+                var historyLog = document.getElementById("history-log");
+                var itemHtml = '<div class="history-item">' +
+                    '<div class="history-title">✔ ' + currentData.title + ' CLEAR</div>' +
+                    '<div>問題：' + currentData.text + '</div>' +
+                    '<div class="history-ans">▶ あなたの回答：' + input + '</div>' +
+                    '</div>';
+                historyLog.innerHTML += itemHtml;
+
                 currentStep++;
 
                 if (currentStep < mysteries.length) {
