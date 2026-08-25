@@ -36,6 +36,12 @@
             padding: 15px;
             border: 1px dashed #00ff00;
         }
+        .progress-title {
+            color: #ffcc00;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
         input[type="text"] {
             padding: 8px 12px;
             font-size: 1em;
@@ -72,55 +78,120 @@
     </style>
 </head>
 
-
-
 <body>
 
     <div class="warning">⚠️【緊急事態】サイトが占拠されました ⚠️</div>
     
     <div class="box">
         <h2>ふっふっふ…！</h2>
-        <p>このウェブサイトは我々が乗っ取った！</p>
-        <p>元に戻したくば、ここに謎の答えを入力するのだ……。</p>
+        <p>俺の名前は黒澤陣。俺が何者かって…？まあその話はいずれ。お前らはどうやら誰かさんを助けようとしているようだが、その知性がお前らにあるか確かめさせてもらう。</p>
+        <p>俺の、用意した問題をすべて解き明かすのだ……。</p>
 
-        <!-- 謎の提示エリア -->
-        <div class="mystery-area">
-            <p>【謎】〇〇に入る合言葉を入力せよ</p>
+        <!-- 謎の表示エリア -->
+        <div class="mystery-area" id="mystery-area">
+            <div id="mystery-title" class="progress-title">【第1問】</div>
+            <p id="mystery-text">ズバリ、ワグネル金打セクションのトレーナーのお名前は？"</p>
         </div>
 
-        <!-- 入力フォーム -->
-        <div style="margin-top: 20px;">
-            <input type="text" id="answerInput" placeholder="俺たちが助けたい人の名前は？">
+        <!-- 解答フォームエリア -->
+        <div id="form-area" style="margin-top: 20px;">
+            <input type="text" id="answerInput" placeholder="答えを入力">
             <button onclick="checkAnswer()">送信</button>
         </div>
 
-        <!-- 正解時に表示されるエリア -->
+        <!-- 4問すべて正解した時に表示されるエリア -->
         <div id="clear-link">
-            <p>くっ…見事謎が解かれたようだ。サイトの解放を許可する。</p>
+            <p>くっ…見事すべての謎が解かれたようだ。サイトの解放を許可する。</p>
             <a href="kojikawamoto_2025.html">＞＞ 本来のサイト（メインページ）へ進む ＜＜</a>
         </div>
     </div>
 
     <script>
+        var currentStep = 0;
+
+        // 1. 各問題の正解リスト
+        var correctAnswers = [
+            ["阪本正彦", "さかもとまさひこ", "サカモトマサヒコ"],
+            ["G", "げー", "ゲー", "ジー", "じー", "ソ"],
+            ["３１", "31", "さんじゅういち", "サンジュウイチ"],
+            ["川本貢司", "かわもとこうじ", "コウジ川本", "こうじ"]
+        ];
+
+        // 2. 各問題の設定（問題文・正解メッセージ・不正解メッセージ・個別ヒント）
+        var mysteries = [
+            {
+                title: "【第1問】",
+                text: "ズバリ、ワグネル金打セクションのトレーナーのお名前は？",
+                successMsg: "第1問クリア。「4つの星の答えは『I』」だ。まだまだ続くぞ！",
+                wrongMsg: "第1問から間違えるとはな！出直してこい！",
+                hints: {
+                    "もりひろあき": "いやいや👋僕はまだそんなにえらくないよー👋"
+                    "坂本正彦": "いやいや👋漢字を間違えるようじゃまだまだだねー👋"
+                }
+            },
+            {
+                title: "【第2問】",
+                text: "バイオリンを演奏するときに、一番体に近い弦を開放してでる音は何？",
+                successMsg: "第2問も突破だと…！？「8つの星の答えは『A』」やるな……！",
+                wrongMsg: "ハハハ！第2問の罠にかかったな！",
+                hints: {
+                    "もりひろあき": "いやいや👋僕は音の名前じゃないよ(´；ω；`)"
+                }
+            },
+            {
+                title: "【第3問】",
+                text: "ヴィオラパートのコーチの誕生月と誕生日の数字を足すと何になる？",
+                successMsg: "10月21日、実は俺の誕生日と一緒だ💕「6つの星の答えは『L』」ぐぬぬ…第3問まで解くとは……次が最後だ！",
+                wrongMsg: "残念！第3問はそう簡単には解けぬ！が、彼女の誕生日は俺の誕生日と同じだ。団員紹介を探せばわかるかもしれんな。",
+                hints: {
+                    "もりひろあき": "実は僕の誕生日でもあるよ👋"
+                }
+            },
+            {
+                title: "【最終問】",
+                text: "最後の謎だ！俺たちが助けたい人の名前は？",
+                successMsg: "なにぃ…！？すべての謎が解かれただと……！？「5つの星の答えは『J』」",
+                wrongMsg: "ハハハ！最後でつまずいたな！やり直すのだ！",
+                hints: {
+                    "やまたきまお": "頼ってくれてうれしいっ！👋",
+                    "まおたき": "うれしいっ！👋"
+                }
+            }
+        ];
+
         function checkAnswer() {
-            var input = document.getElementById("answerInput").value;
+            var input = document.getElementById("answerInput").value.trim();
+            var currentData = mysteries[currentStep];
 
-            // 正解の判定（リンク先は移行先のファイル名に指定してください）
-            if (input === "川本貢司" || input === "かわもとこうじ" || input === "コウジ川本" || input === "こうじかわもと"|| input === "こうじ" || input === "かわもとせんせい" || input === "川本先生") {
-                alert("正解だ……！ロックを解除した。");
-                document.getElementById("clear-link").style.display = "block";
+            if (input === "") {
+                alert("答えを入力するのだ。");
+                return;
+            }
 
-            // ヒントの分岐（自由に追加・変更できます）
-            } else if (input === "はっかー") {
-                alert("フッ…ハッカーではない。黒の組織とお呼び。");
-            } else if (input === "こうじ") {
-                alert("川本に助けを求めても無駄だ……！");
-            } else if (input === "") {
-                alert("合言葉を入力するのだ。");
+            // 正解判定
+            if (correctAnswers[currentStep].includes(input)) {
+                alert(currentData.successMsg);
+                currentStep++;
 
-            // 不正解の判定
+                if (currentStep < mysteries.length) {
+                    // 次の問題へ表示更新
+                    document.getElementById("mystery-title").innerText = mysteries[currentStep].title;
+                    document.getElementById("mystery-text").innerText = mysteries[currentStep].text;
+                    document.getElementById("answerInput").value = "";
+                } else {
+                    // 全問クリア時
+                    document.getElementById("form-area").style.display = "none";
+                    document.getElementById("mystery-area").style.display = "none";
+                    document.getElementById("clear-link").style.display = "block";
+                }
+
+            // 問題ごとの個別ヒント判定
+            } else if (currentData.hints && currentData.hints[input]) {
+                alert(currentData.hints[input]);
+
+            // 不正解判定（問題ごとのメッセージ）
             } else {
-                alert("ハハハ！答えが違うぞ！もう一度考え直すのだな！");
+                alert(currentData.wrongMsg);
             }
         }
     </script>
