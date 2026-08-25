@@ -1,133 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="google-site-verification" content="6V76E-9DPZCR1s6JTRX9dYpW_Dv50SX_Ya3N6lWpcwI" />
-    <meta name="keywords" content="コウジ川本, プロフィール, TONIO,ジャイーズ, コウジ川本のアイドル人生, こうじかわもと, ワグネル, 合宿, 夏合宿, 企画厚生, 2025夏合宿,たきもとじん, 滝本迅, こうじかわもと, 2026夏合宿謎解き">
-    <meta name="author" content="Maotaki">
-
-    <meta name="description" content="ワグネルソサイエティーオーケストラの滝本迅だ">
-    <title>【WARNING】SYSTEM HACKED</title>
-
-    <style>
-        /* 黒背景・明るい緑文字の見やすい配色 */
-        body {
-            background-color: #0d0d0d;
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .warning {
-            color: #ff0033;
-            font-size: 2em;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .box {
-            border: 2px solid #00ff00;
-            padding: 30px;
-            margin: 0 auto;
-            max-width: 600px;
-            background-color: #111111;
-        }
-        /* クリアした過去問ログのスタイル */
-        .history-item {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #336633;
-            background-color: #051505;
-            text-align: left;
-            font-size: 0.95em;
-        }
-        .history-title {
-            color: #ffcc00;
-            font-weight: bold;
-        }
-        .history-ans {
-            color: #ffffff;
-            margin-top: 5px;
-        }
-        .mystery-area {
-            margin: 20px 0;
-            padding: 15px;
-            border: 1px dashed #00ff00;
-        }
-        .progress-title {
-            color: #ffcc00;
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        input[type="text"] {
-            padding: 8px 12px;
-            font-size: 1em;
-            background-color: #000;
-            color: #00ff00;
-            border: 1px solid #00ff00;
-            outline: none;
-        }
-        button {
-            padding: 8px 16px;
-            font-size: 1em;
-            background-color: #00ff00;
-            color: #000;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #33ff33;
-        }
-        #clear-link {
-            display: none; /* 最初は隠しておく */
-            margin-top: 25px;
-            padding: 15px;
-            border: 2px solid #ffcc00;
-            background-color: #1a1a00;
-        }
-        #clear-link a {
-            color: #ffcc00;
-            font-size: 1.2em;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="warning">⚠️【緊急事態】サイトが占拠されました ⚠️</div>
-    
-    <div class="box">
-        <h2>ふっふっふ…！</h2>
-        <p>俺の名前は黒澤陣。俺が何者かって…？まあその話はいずれ。お前らはどうやら誰かさんを助けようとしているようだが、その知性がお前らにあるか確かめさせてもらう。</p>
-        <p>俺の、用意した問題をすべて解き明かすのだ……。</p>
-
-        <!-- クリアした問題のログがここにたまります -->
-        <div id="history-log"></div>
-
-        <!-- 現在挑戦中の謎表示エリア -->
-        <div class="mystery-area" id="mystery-area">
-            <div id="mystery-title" class="progress-title">【第1問】</div>
-            <p id="mystery-text">ズバリ、ワグネル金打セクションのトレーナーのお名前は？</p>
-        </div>
-
-        <!-- 解答フォームエリア -->
-        <div id="form-area" style="margin-top: 20px;">
-            <input type="text" id="answerInput" placeholder="答えを入力">
-            <button onclick="checkAnswer()">送信</button>
-        </div>
-
-        <!-- 4問すべて正解した時に表示されるエリア -->
-        <div id="clear-link">
-            <p>くっ…見事すべての謎が解かれたようだ。サイトの解放を許可する。</p>
-            <a href="kojikawamoto_2025.html">＞＞ 本来のサイト（メインページ）へ進む ＜＜</a>
-        </div>
-    </div>
-
-    <script>
-        var currentStep = 0;
+var currentStep = 0;
 
         // 1. 各問題の正解リスト
         var correctAnswers = [
@@ -137,11 +8,12 @@
             ["川本貢司", "かわもとこうじ", "コウジ川本", "こうじ"]
         ];
 
-        // 2. 各問題の設定（問題文・正解メッセージ・不正解メッセージ・個別ヒント）
+        // 2. 各問題の設定（手に入れたキーワード `key` を追加）
         var mysteries = [
             {
                 title: "【第1問】",
                 text: "ズバリ、ワグネル金打セクションのトレーナーのお名前は？",
+                key: "4つの星の答えは『I』",
                 successMsg: "第1問クリア。「4つの星の答えは『I』」だ。まだまだ続くぞ！",
                 wrongMsg: "第1問から間違えるとはな！出直してこい！",
                 hints: {
@@ -152,6 +24,7 @@
             {
                 title: "【第2問】",
                 text: "バイオリンを演奏するときに、一番体に近い弦を開放してでる音は何？",
+                key: "8つの星の答えは『A』",
                 successMsg: "第2問も突破だと…！？「8つの星の答えは『A』」やるな……！",
                 wrongMsg: "ハハハ！第2問の罠にかかったな！",
                 hints: {
@@ -161,6 +34,7 @@
             {
                 title: "【第3問】",
                 text: "ヴィオラパートのコーチの誕生月と誕生日の数字を足すと何になる？",
+                key: "6つの星の答えは『L』",
                 successMsg: "10月21日、実は俺の誕生日と一緒だ💕「6つの星の答えは『L』」ぐぬぬ…第3問まで解くとは……次が最後だ！",
                 wrongMsg: "残念！第3問はそう簡単には解けぬ！が、彼女の誕生日は俺の誕生日と同じだ。団員紹介を探せばわかるかもしれんな。",
                 hints: {
@@ -170,6 +44,7 @@
             {
                 title: "【最終問】",
                 text: "最後の謎だ！俺たちが助けたい人の名前は？",
+                key: "5つの星の答えは『J』",
                 successMsg: "なにぃ…！？すべての謎が解かれただと……！？「5つの星の答えは『J』」",
                 wrongMsg: "ハハハ！最後でつまずいたな！やり直すのだ！",
                 hints: {
@@ -192,12 +67,13 @@
             if (correctAnswers[currentStep].includes(input)) {
                 alert(currentData.successMsg);
 
-                // 過去ログ表示用エリアにクリアした問題と入力を追加
+                // 過去ログ表示用エリアにクリアした問題・回答・獲得キーワードを追加
                 var historyLog = document.getElementById("history-log");
                 var itemHtml = '<div class="history-item">' +
                     '<div class="history-title">✔ ' + currentData.title + ' CLEAR</div>' +
                     '<div>問題：' + currentData.text + '</div>' +
                     '<div class="history-ans">▶ あなたの回答：' + input + '</div>' +
+                    '<div style="color: #ffcc00; font-weight: bold; margin-top: 5px;">🔑 獲得キーワード：' + currentData.key + '</div>' +
                     '</div>';
                 historyLog.innerHTML += itemHtml;
 
@@ -224,7 +100,3 @@
                 alert(currentData.wrongMsg);
             }
         }
-    </script>
-
-</body>
-</html>
