@@ -2,41 +2,97 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>SYSTEM WARNING</title>
+    <link rel="stylesheet" href="style.css">
+    <title>【WARNING】SYSTEM HACKED</title>
     <style>
+        /* 黒の組織風のダークテーマ */
         body {
-            background-color: #0d0d0d;
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
+            background-color: #0b0c10;
+            color: #66fcf1;
+            font-family: 'Courier New', monospace;
             text-align: center;
-            padding: 50px;
+            padding: 40px;
         }
-        .warning {
-            color: #ff0033;
-            font-size: 2em;
+        .hacked-box {
+            border: 2px solid #45a29e;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #1f2833;
+        }
+        .warning-text {
+            color: #ff3333;
+            font-size: 1.5em;
             font-weight: bold;
         }
-        .box {
-            border: 2px solid #00ff00;
-            padding: 20px;
-            margin: 30px auto;
-            max-width: 600px;
+        #clear-link {
+            display: none; /* 最初は隠しておく */
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px dashed #66fcf1;
+        }
+        #clear-link a {
+            color: #ffbd69;
+            font-size: 1.2em;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <div class="warning">【緊急事態】サイトが占拠されました</div>
-    
-    <div class="box">
-        <p>はっはっは！このウェブサイトは我々が乗っ取った！</p>
-        <p>元に戻したくば、以下の謎を解き明かすのだ……。</p>
+    <div class="hacked-box">
+        <p class="warning-text">⚠️ WARNING: SYSTEM HACKED ⚠️</p>
+        <h2>我々は黒の組織だ……</h2>
+        <p>このウェブサイトは我々が占拠した！</p>
+        <p>元に戻したくば、以下の謎を解き、合言葉を入力せよ。</p>
+        
+        <hr style="border-color:#45a29e; margin:20px 0;">
+
+        <!-- 謎の提示部分 -->
+        <div class="mystery-area">
+            <p>【謎】〇〇〇〇に入る言葉は何か？</p>
+        </div>
+
+        <!-- 解答入力フォーム（去年の構成を活用） -->
+        <div style="margin-top: 20px;">
+            <input type="text" id="answerInput" placeholder="合言葉を入力">
+            <button onclick="checkAnswer()">送信</button>
+        </div>
+
+        <!-- 正解した時だけ表示されるエリア -->
+        <div id="clear-link">
+            <p>くっ…見事謎が解かれたようだ。サイトの解放を許可する。 </p>
+            <a href="sub.html">＞＞ 本来のサイトへ移動する ＜＜</a>
+        </div>
     </div>
 
-    <!-- ここに謎や解答入力フォームなどを配置 -->
-    <div class="mystery">
-        <p>【謎1】〇〇に入る言葉を込めよ……</p>
-    </div>
+    <script>
+        function checkAnswer() {
+            var input = document.getElementById("answerInput").value;
 
+            // 正解の判定
+            if (input === "くろのそしき" || input === "クロノソシキ") {
+                alert("正解だ……！ロックを解除した。");
+                // 正解時に隠していたリンクを表示
+                document.getElementById("clear-link").style.display = "block";
+                
+                /* もし自動でページ移動させたい場合は以下を使います
+                window.location.href = "sub.html"; 
+                */
+
+            // 惜しい入力や特定の単語へのリアクション（ヒント）
+            } else if (input === "はっかー") {
+                alert("フッ…ハッカーではない。黒の組織とお呼び。");
+            } else if (input === "こうじ") {
+                alert("コウジ川本に助けを求めても無駄だ……");
+            } else if (input === "") {
+                alert("合言葉を入力するのだ。");
+
+            // 不正解の判定
+            } else {
+                alert("ハハハ！答えが違うぞ！もう一度考え直すのだな！");
+            }
+        }
+    </script>
 </body>
 </html>
